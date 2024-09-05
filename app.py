@@ -45,7 +45,7 @@ def embed_file(file):
     return retriever
 
 
-def send_message(message, role, save=True):#AI와 대화하는 함수
+def send_message(message, role, save=True):#AI와 대화하는 함수이다. 
     with st.chat_message(role):
         st.markdown(message)
     if save:
