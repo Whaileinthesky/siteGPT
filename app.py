@@ -99,9 +99,10 @@ with st.sidebar:#안에 있는 내용은 전부 st.sidebar
         "Upload a .txt .pdf or .docx file",
         type=["pdf", "txt", "docx"],
     )
-    st.subheader("https://github.com/Whaileinthesky/FullStack_GPT")
+    st.header("https://github.com/Whaileinthesky/FullStack_GPT")
+    st.subheader("Function Part")
     st.code("""
-    @st.cache_data(show_spinner="Embedding file...")
+@st.cache_data(show_spinner="Embedding file...")
 def embed_file(file):
     file_content = file.read()
     file_path = f"./files/{file.name}"
@@ -140,27 +141,13 @@ def paint_history():#채팅기록이 날아가지 않게 다시 그리는 함수
 
 def format_docs(docs):
     return "\n\n".join(document.page_content for document in docs)
-
-
-prompt = ChatPromptTemplate.from_messages(
-    [
-        (
-            "system",
-            """
-            Answer the question using ONLY the following context. If you don't know the answer just say you don't know. DON'T make anything up.
-            
-            Context: {context}
-            """,
-        ),
-        ("human", "{question}"),
-    ]
-)
-
-
+""")
+    st.subheader("Homepage")
+    st.code("""
 st.title("DocumentGPT")
 
 st.markdown(
-    """
+    "
 Welcome!
             
 Use this chatbot to ask questions to an AI about your files!
@@ -168,19 +155,21 @@ Use this chatbot to ask questions to an AI about your files!
 Upload your files on the sidebar.
 
 Enter your OPENAI_API_KEY in sidebar.
-"""
+"
 )
 
-with st.sidebar:#안에 있는 내용은 전부 st.sidebar
+""")
+    st.subheader("Sidebar")
+    st.code("""
+with st.sidebar:
     file = st.file_uploader(
         "Upload a .txt .pdf or .docx file",
         type=["pdf", "txt", "docx"],
     )
-    st.subheader("https://github.com/Whaileinthesky/FullStack_GPT")
-    st.code("")
-
-    
-
+    st.header("https://github.com/Whaileinthesky/FullStack_GPT")
+""")
+    st.subheader("Execute Part")
+    st.code("""
 if file:#파일을 업로드하면
     retriever = embed_file(file)
     send_message("I'm ready! Ask away!", "ai", save=False)
