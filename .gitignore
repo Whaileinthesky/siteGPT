@@ -2,3 +2,8 @@ env/
 .env
 files/
 .cache/
+notebook.ipynb
+mine/
+embeddings/
+prompt.json
+prompt.yaml
