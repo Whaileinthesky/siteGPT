@@ -7,3 +7,4 @@ mine/
 embeddings/
 prompt.json
 prompt.yaml
+Quiz_GPT.py

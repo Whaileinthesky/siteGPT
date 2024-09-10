@@ -1,3 +1,11 @@
 python -m venv ./env
 env\Scripts\Activate.ps1
 pip install -r requirements.txt
+
+기존 원격 저장소 확인: VSCode의 터미널에서 현재 설정된 원격 저장소를 확인하려면 다음 명령어를 사용하세요:
+git remote -v
+원격 저장소 변경: 기존 원격 저장소를 새로 만든 'b' 레포지토리의 URL로 변경하기 위해 다음 명령어를 사용하세요:
+git remote set-url origin <새 레포지토리 URL>
+
+새 레포지토리에 푸시: 변경된 원격 저장소에 변경 사항을 푸시합니다:
+git push -u origin main
